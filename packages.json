@@ -1,7 +1,7 @@
 {
-    "name" : "MyFirstDiscordBot",
+    "name" : "EmochatBot",
     "version" : "1.0.0",
-    "description" : "A Discord's bot to test things",
+    "description" : "Use Emochat everywhere !",
     "main" : "index.js",
     "author" : "SłγЗγєѕ#5557",
     "dependencies" : {
