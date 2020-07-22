@@ -1,0 +1,10 @@
+{
+    "name" : "MyFirstDiscordBot",
+    "version" : "1.0.0",
+    "description" : "A Discord's bot to test things",
+    "main" : "index.js",
+    "author" : "SłγЗγєѕ#5557",
+    "dependencies" : {
+        "discord.js" : "12.2.0"
+    }
+}
