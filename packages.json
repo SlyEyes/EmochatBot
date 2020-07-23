@@ -1,7 +1,7 @@
 {
-    "name" : "EmochatBot",
-    "version" : "1.0.0",
-    "description" : "Use Emochat everywhere !",
+    "name" : "EmoticatBot",
+    "version" : "0.3",
+    "description" : "Use Emoticat everywhere !",
     "main" : "index.js",
     "author" : "SłγЗγєѕ#5557",
     "dependencies" : {
