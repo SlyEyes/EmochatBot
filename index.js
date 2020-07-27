@@ -1,7 +1,7 @@
 // EmoticatBot by SłγЗγєѕ#5557
 // Github : https://github.com/SlyEyes
 
-// Need of the bot
+// Const of the bot
 const Discord = require('discord.js');
 const { Client, Collection } = require('discord.js');
 const client = new Client();
@@ -12,8 +12,10 @@ const config = require("./modules/config.json");
 const prefix = config.prefix
 client.commands = new Collection(),
 
+// Connection with the token
 client.login(auth.token)
 
+// Search for the command file and add it to a collection
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 console.log(commandFiles);
 
@@ -23,10 +25,12 @@ for (const file of commandFiles) {
   console.log(client.commands);
 }
 
+// Connection established message
 client.on('ready', function () {
   console.log("EmoticatBot#8111 connected !");
 })
 
+// Read the message of the user and execute or not a command
 client.on('message', message => {
   if (!message.content.startsWith(prefix) || message.author.bot) return;
 
@@ -38,7 +42,18 @@ client.on('message', message => {
   } catch (err) {
     message.channel.send({embed : {
       color: 0xff0000,
-      description: 'This command doesn\'t exist !',
+      description: 'The ' + '\"' + command + '\"' + ' command doesn\'t exist or I don\'t have the permission to act !',
     }})
   
 }});
+
+// Send a message when the bot joining a server
+client.on('guildCreate', guild => {
+  const channel = guild.channels.cache.find(channel => channel.type === 'text' && channel.permissionsFor(guild.me).has('SEND_MESSAGES'))
+    channel.send({embed: {
+      color: 0x00ffff,
+      title: '__Hi there ! I\'m EmoticatBot, thanks to invite me !__',
+      description: 'My mission ? Allow your server to use the **Emoticat** ! Type **<help** to begin.\n\n(*Go to https://github.com/users/SlyEyes/projects/2 to follow the developpement of this bot !*)',
+      thumbnail: {url: 'https://i.imgur.com/8diTYcy.png'},
+    }})
+})
