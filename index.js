@@ -22,8 +22,8 @@ console.log(commandFiles);
 for (const file of commandFiles) {
   const command = require(`./commands/${file}`);
   client.commands.set(command.name, command)
-  console.log(client.commands);
 }
+console.log(client.commands);
 
 // Connection established message
 client.on('ready', function () {
@@ -42,8 +42,9 @@ client.on('message', message => {
   } catch (err) {
     message.channel.send({embed : {
       color: 0xff0000,
-      description: 'The ' + '\"' + command + '\"' + ' command doesn\'t exist or I don\'t have the permission to act !',
+      description: '❌ The ' + '\"' + command + '\"' + ' command doesn\'t exist or I don\'t have the permission to act !',
     }})
+    console.log(err);
   }
 });
 
@@ -52,8 +53,8 @@ client.on('guildCreate', guild => {
   const channel = guild.channels.cache.find(channel => channel.type === 'text' && channel.permissionsFor(guild.me).has('SEND_MESSAGES'))
     channel.send({embed: {
       color: 0x00ffff,
-      title: '__Hi there ! I\'m EmoticatBot, thanks to invite me !__',
-      description: 'My mission ? Allow your server to use the **Emoticat** ! Type **<help** to begin.\n\n(*Go to https://github.com/users/SlyEyes/projects/2 to follow the developpement of this bot !*)',
+      title: '__Hi there 👋 ! I\'m EmoticatBot, thanks to invite me !__',
+      description: 'My mission ? Allow your server to use the **Emoticat** ! Type **<help** to begin.\n\n(*Go to https://github.com/users/SlyEyes/projects/2 to follow the developpement of this bot ! 🙏*)',
       thumbnail: {url: 'https://i.imgur.com/8diTYcy.png'},
     }})
 })
