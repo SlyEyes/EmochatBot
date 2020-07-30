@@ -54,7 +54,7 @@ client.on('guildCreate', guild => {
     channel.send({embed: {
       color: 0x00ffff,
       title: '__Hi there 👋 ! I\'m EmoticatBot, thanks to invite me !__',
-      description: 'My mission ? Allow your server to use the **Emoticat** ! Type **<help** to begin.\n\n(*Go to https://github.com/users/SlyEyes/projects/2 to follow the developpement of this bot ! 🙏*)',
+      description: 'My mission ? Allow your server to use the **Emoticat** ! Type **$help** to begin.\n\n(*Go to https://github.com/users/SlyEyes/projects/2 to follow the developpement of this bot ! 🙏*)',
       thumbnail: {url: 'https://i.imgur.com/8diTYcy.png'},
     }})
 })
