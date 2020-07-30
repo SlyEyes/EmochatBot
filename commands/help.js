@@ -2,6 +2,10 @@ module.exports = {
     name: 'help',
     description: 'Display a list of the available commands',
     execute(message, args) {
+        message.reply({embed : {
+            color: 0x00ffff,
+            description: 'A list of all the available commands has been send in your DM',
+        }})
         message.author.createDM().then(channel => {
             channel.send({embed : {
                 color: 0x00ffff,

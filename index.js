@@ -27,7 +27,7 @@ for (const file of commandFiles) {
 
 // Connection established message
 client.on('ready', function () {
-  console.log("EmoticatBot#8111 connected !");
+  console.log("\nEmoticatBot#8111 connected !");
 })
 
 // Read the message of the user and execute or not a command
@@ -44,8 +44,8 @@ client.on('message', message => {
       color: 0xff0000,
       description: 'The ' + '\"' + command + '\"' + ' command doesn\'t exist or I don\'t have the permission to act !',
     }})
-  
-}});
+  }
+});
 
 // Send a message when the bot joining a server
 client.on('guildCreate', guild => {
