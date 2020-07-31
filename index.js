@@ -3,14 +3,14 @@
 
 // Const of the bot
 const Discord = require('discord.js');
-const { Client, Collection } = require('discord.js');
+const { Client, Collection, MessageAttachment } = require('discord.js');
 const client = new Client();
 const fs = require("fs");
 const packages = require("./packages.json");
 const auth = require("./modules/auth.json");
 const config = require("./modules/config.json");
 const prefix = config.prefix
-client.commands = new Collection(),
+client.commands = new Collection();
 
 // Connection with the token
 client.login(auth.token)
@@ -38,7 +38,7 @@ client.on('message', message => {
   const command = args.shift().toLowerCase();
 
   try {
-    client.commands.get(command).execute(message, args);
+    client.commands.get(command).execute(message, args, MessageAttachment);
   } catch (err) {
     message.channel.send({embed : {
       color: 0xff0000,
