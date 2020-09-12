@@ -37,9 +37,10 @@ client.on('message', message => {
 
   const args = message.content.slice(prefix.length).trim().split(/ +/);
   const command = args.shift().toLowerCase();
+  const num = args;
 
   try {
-    client.commands.get(command).execute(message, args, MessageAttachment);
+    client.commands.get(command).execute(message, args, num, MessageAttachment);
   } catch (err) {
     message.channel.send({embed : {
       color: 0xff0000,
@@ -56,6 +57,6 @@ client.on('guildCreate', guild => {
       color: 0x00ffff,
       title: '__Hi there 👋 ! I\'m EmoticatBot ' + v + ', thanks to invite me !__',
       description: 'My mission ? Allow your server to use the **Emoticat** ! Type **$help** to begin.\n\n(*Go to https://github.com/users/SlyEyes/projects/2 to follow the developpement of this bot ! 🙏*)',
-      thumbnail: {url: 'https://i.imgur.com/8diTYcy.png'},
+      thumbnail: {url: 'https://i.imgur.com/x1oEuWG.png'},
     }})
 })
