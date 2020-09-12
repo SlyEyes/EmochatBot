@@ -7,6 +7,7 @@ const { Client, Collection, MessageAttachment } = require('discord.js');
 const client = new Client();
 const fs = require("fs");
 const packages = require("./packages.json");
+const v = packages.version;
 const auth = require("./modules/auth.json");
 const config = require("./modules/config.json");
 const prefix = config.prefix
@@ -53,7 +54,7 @@ client.on('guildCreate', guild => {
   const channel = guild.channels.cache.find(channel => channel.type === 'text' && channel.permissionsFor(guild.me).has('SEND_MESSAGES'))
     channel.send({embed: {
       color: 0x00ffff,
-      title: '__Hi there 👋 ! I\'m EmoticatBot, thanks to invite me !__',
+      title: '__Hi there 👋 ! I\'m EmoticatBot ' + v + ', thanks to invite me !__',
       description: 'My mission ? Allow your server to use the **Emoticat** ! Type **$help** to begin.\n\n(*Go to https://github.com/users/SlyEyes/projects/2 to follow the developpement of this bot ! 🙏*)',
       thumbnail: {url: 'https://i.imgur.com/8diTYcy.png'},
     }})
