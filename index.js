@@ -1,5 +1,7 @@
-// EmoticatBot by SłγЗγєѕ#5557
+// EmoticatBot#8111 by SłγЗγєѕ#5557
 // Github : https://github.com/SlyEyes
+// This program and all those contained in the "commands" folder are made available under the terms of the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
+// Ce programme ainsi que tous ceux contenu dans le dossier "commands" sont mis à disposition selon les termes de la Licence Creative Commons Attribution - Pas d’Utilisation Commerciale - Partage dans les Mêmes Conditions 4.0 International
 
 // Const of the bot
 const Discord = require('discord.js');

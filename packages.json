@@ -1,11 +1,10 @@
 {
     "name" : "EmoticatBot",
-    "version" : "1.0.5",
+    "version" : "1.1.0",
     "description" : "Use Emoticat everywhere !",
     "main" : "index.js",
     "author" : "SłγЗγєѕ#5557",
     "dependencies" : {
-        "discord.js" : "12.2.0",
-	"canvas":"2.6.1"
+        "discord.js" : "12.2.0"
     }
 }
