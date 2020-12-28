@@ -1,4 +1,4 @@
-// EmoticatBot#8111 by SłγЗγєѕ#5557
+// RoboNeko#8111 by SłγЗγєѕ#5557
 // Github : https://github.com/SlyEyes
 // This program and all those contained in the "commands" folder are made available under the terms of the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
 // Ce programme ainsi que tous ceux contenu dans le dossier "commands" sont mis à disposition selon les termes de la Licence Creative Commons Attribution - Pas d’Utilisation Commerciale - Partage dans les Mêmes Conditions 4.0 International
@@ -13,10 +13,21 @@ const v = packages.version;
 const auth = require("./modules/auth.json");
 const config = require("./modules/config.json");
 const prefix = config.prefix
+const lang = config.language
 client.commands = new Collection();
 
 // Connection with the token
 client.login(auth.token)
+
+// Status of the bot
+client.on("ready", () =>{
+  client.user.setPresence({
+      status: "online",
+      activity: {
+          name: "$help",
+          type: "PLAYING"
+  }})
+})
 
 // Search for the command file and add it to a collection
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
@@ -30,7 +41,7 @@ console.log(client.commands);
 
 // Connection established message
 client.on('ready', function () {
-  console.log("\nEmoticatBot#8111 connected !");
+  console.log("\nRoboNeko#8111 connected !");
 })
 
 // Read the message of the user and execute or not a command
@@ -57,8 +68,8 @@ client.on('guildCreate', guild => {
   const channel = guild.channels.cache.find(channel => channel.type === 'text' && channel.permissionsFor(guild.me).has('SEND_MESSAGES'))
     channel.send({embed: {
       color: 0x00ffff,
-      title: '__Hi there 👋 ! I\'m EmoticatBot ' + v + ', thanks to invite me !__',
+      title: '__Hi there 👋 ! I\'m RoboNeko ' + v + ', thanks to invite me !__',
       description: 'My mission ? Allow your server to use the **Emoticat** ! Type **$help** to begin.\n\n(*Go to https://github.com/users/SlyEyes/projects/2 to follow the developpement of this bot ! 🙏*)',
-      thumbnail: {url: 'https://i.imgur.com/x1oEuWG.png'},
+      thumbnail: {url: 'https://i.imgur.com/LXx6Pvw.png'},
     }})
 })
