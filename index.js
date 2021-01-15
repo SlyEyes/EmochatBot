@@ -8,8 +8,8 @@ const Discord = require('discord.js');
 const { Client, Collection, MessageAttachment } = require('discord.js');
 const client = new Client();
 const fs = require("fs");
-const packages = require("./packages.json");
-const v = packages.version;
+const package = require("./package.json");
+const v = package.version;
 const auth = require("./modules/auth.json");
 const config = require("./modules/config.json");
 const prefix = config.prefix
@@ -69,7 +69,7 @@ client.on('guildCreate', guild => {
     channel.send({embed: {
       color: 0x00ffff,
       title: '__Hi there 👋 ! I\'m RoboNeko ' + v + ', thanks to invite me !__',
-      description: 'My mission ? Allow your server to use the **Emoticat** ! Type **$help** to begin.\n\n(*Go to https://github.com/users/SlyEyes/projects/2 to follow the developpement of this bot ! 🙏*)',
+      description: 'Type **$help** to begin.\n\n(*Go to https://github.com/users/SlyEyes/projects/2 to follow the developpement of this bot ! 🙏*)',
       thumbnail: {url: 'https://i.imgur.com/LXx6Pvw.png'},
     }})
 })

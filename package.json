@@ -1,0 +1,22 @@
+{
+  "name" : "RoboNeko",
+  "version" : "1.2.0",
+  "description" : "Coming soon...",
+  "main" : "index.js",
+  "author" : "SłγЗγєѕ#5557",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^12.2.0"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "bot",
+    "Discord"
+  ]
+}
