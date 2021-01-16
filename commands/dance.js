@@ -10,7 +10,7 @@ module.exports = {
         }});
       } else {
         message.channel.send(`*${message.author.username}*`);
-        const attachment = new MessageAttachment('https://i.imgur.com/TnZpxgj.gif');
+        const attachment = new MessageAttachment('https://slyeyes.github.io/RoboNeko/images/dance.gif');
         message.channel.send(attachment)
         while (num > 1 ) {
           num = num - 1;

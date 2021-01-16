@@ -68,6 +68,6 @@ client.on('guildCreate', guild => {
       color: 0x00ffff,
       title: '__Hi there 👋 ! I\'m RoboNeko ' + v + ', thanks to invite me !__',
       description: 'Type **$help** to begin.\n\n(*Go to https://github.com/users/SlyEyes/projects/2 to follow the developpement of this bot ! 🙏*)',
-      thumbnail: {url: 'https://i.imgur.com/LXx6Pvw.png'},
+      thumbnail: {url: 'https://slyeyes.github.io/RoboNeko/images/logo.png'},
     }})
 })
