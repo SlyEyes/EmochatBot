@@ -13,7 +13,7 @@
   "engines": {
     "node": "12.x"
   },
-  "license": "MIT",
+  "license": "Apache 2.0",
   "keywords": [
     "node",
     "bot",
