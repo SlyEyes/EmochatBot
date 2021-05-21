@@ -1,4 +1,4 @@
-// RoboNeko#8111 by SłγЗγєѕ#5557
+// RoboNeko#8111 by SlyEyes#5557
 // Github : https://github.com/SlyEyes
 
 // Const of the bot
@@ -17,16 +17,6 @@ client.commands = new Collection();
 // Connection with the token
 client.login(auth.token)
 
-// Status of the bot
-client.on("ready", () =>{
-  client.user.setPresence({
-      status: "online",
-      activity: {
-          name: "$help",
-          type: "PLAYING"
-  }})
-})
-
 // Search for the command file and add it to a collection
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 console.log(commandFiles);
@@ -42,16 +32,25 @@ client.on('ready', function () {
   console.log("\nRoboNeko#8111 connected !");
 })
 
+// Status of the bot
+client.on("ready", () =>{
+  client.user.setPresence({
+      status: "online",
+      activity: {
+          name: "la liste " + prefix + "help",
+          type: "WATCHING"
+  }})
+})
+
 // Read the message of the user and execute or not a command
 client.on('message', message => {
   if (!message.content.startsWith(prefix) || message.author.bot) return;
 
   const args = message.content.slice(prefix.length).trim().split(/ +/);
   const command = args.shift().toLowerCase();
-  const num = args;
 
   try {
-    client.commands.get(command).execute(message, args, num, MessageAttachment);
+    client.commands.get(command).execute(message, args, MessageAttachment);
   } catch (err) {
     message.channel.send({embed : {
       color: 0xff0000,
