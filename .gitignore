@@ -1,4 +1,4 @@
-modules/auth.json
-bot_link.txt
+*.env
 node_modules/
+bot_link.txt
 old/

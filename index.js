@@ -8,14 +8,14 @@ const client = new Client();
 const fs = require("fs");
 const package = require("./package.json");
 const v = package.version;
-const auth = require("./modules/auth.json");
+require("dotenv").config();
 const config = require("./modules/config.json");
 const prefix = config.prefix
 const lang = config.language
 client.commands = new Collection();
 
 // Connection with the token
-client.login(auth.token)
+client.login(process.env.BOT_TOKEN);
 
 // Search for the command file and add it to a collection
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
