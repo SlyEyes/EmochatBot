@@ -37,7 +37,7 @@ client.on("ready", () =>{
   client.user.setPresence({
       status: "online",
       activity: {
-          name: "la liste " + prefix + "help",
+          name: "the " + prefix + "help list",
           type: "WATCHING"
   }})
 })
@@ -66,7 +66,7 @@ client.on('guildCreate', guild => {
     channel.send({embed: {
       color: 0x00ffff,
       title: '__Hi there 👋 ! I\'m RoboNeko ' + v + ', thanks to invite me !__',
-      description: 'Type **$help** to begin.\n\n(*Go to https://github.com/users/SlyEyes/projects/2 to follow the developpement of this bot ! 🙏*)',
+      description: 'Type **/neko help** to begin.\n\n(*Go to https://github.com/users/SlyEyes/projects/2 to follow the developpement of this bot ! 🙏*)',
       thumbnail: {url: 'https://slyeyes.github.io/RoboNeko/images/logo.png'},
     }})
 })
